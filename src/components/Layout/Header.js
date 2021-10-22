@@ -9,8 +9,6 @@ export default function Header() {
     const { user, authStatus, logoutUser } = ctxUser
     return (
         <>
-            <title>Artempo Studio</title>
-
 
             <header class="bg-sky">
                 <nav class="max-w-8xl mx-auto px-0 sm:px-4 lg:px-8" aria-label="Top">
@@ -23,13 +21,13 @@ export default function Header() {
                                 </Link>
                             </div>
                             <div class="hidden ml-40 space-x-16 lg:block">
-                                <Link to="/obras" class="text-base font-blig text-cerulean hover:text-sky-700" key="Solutions">
+                                <Link to="/obras" class="text-base font-large text-cerulean hover:text-sky-700" key="Obras">
                                     Obras
                                 </Link>
-                                <Link to="/about-us" class="text-base font-medium text-cerulean hover:text-sky-700" key="Pricing">
+                                <Link to="/about-us" class="text-base font-large text-cerulean hover:text-sky-700" key="Abut-us">
                                     ¿Quiénes somos?
                                 </Link>
-                                <Link to="/contacto" class="text-base font-medium text-cerulean hover:text-sky-700" key="Docs">
+                                <Link to="/contacto" class="text-base font-large text-cerulean hover:text-sky-700" key="Contacto">
                                     Contáctanos
                                 </Link>
 
