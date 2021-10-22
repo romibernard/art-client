@@ -83,10 +83,10 @@ export default function CreateObra() {
     console.log(event.target.files);
 
     const cloudinaryAPI =
-      "https://api.cloudinary.com/v1_1/artempo/image/upload";
+      "https://api.cloudinary.com/v1_1/samanthacmic/image/upload";
 
     const data = new FormData();
-    data.append("upload_preset", "artempo");
+    data.append("upload_preset", "Clase-Brillo-CR");
     data.append("file", event.target.files[0]);
 
     const result = await axios.post(cloudinaryAPI, data);
