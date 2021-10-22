@@ -80,7 +80,6 @@ export default function Pets() {
                         <a href={e.href}>
                           <span
                             aria-hidden="true"
-                            className="absolute inset-0"
                           />
                           {e.name}
                         </a>
