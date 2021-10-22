@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import ObrasContext from "./../context/Obras/ObrasContext";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
 /*

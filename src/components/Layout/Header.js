@@ -21,16 +21,15 @@ export default function Header() {
                                 </Link>
                             </div>
                             <div class="hidden ml-40 space-x-16 lg:block">
-                                <Link to="/obras" class="text-base font-large text-cerulean hover:text-sky-700" key="Obras">
-                                    Obras
-                                </Link>
                                 <Link to="/about-us" class="text-base font-large text-cerulean hover:text-sky-700" key="Abut-us">
                                     ¿Quiénes somos?
                                 </Link>
                                 <Link to="/contacto" class="text-base font-large text-cerulean hover:text-sky-700" key="Contacto">
                                     Contáctanos
                                 </Link>
-
+                                <Link to="/obras" class="text-base font-large text-cerulean hover:text-sky-700" key="Obras">
+                                    Obras
+                                </Link>
                                 <Link
                                     to="/obras/crear"
                                     class="text-base font-medium text-cerulean hover:text-sky-700"
