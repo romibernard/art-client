@@ -37,7 +37,7 @@ export default function Header() {
                                     to="/obras/crear"
                                     class="text-base font-medium text-cerulean hover:text-sky-700"
                                 >
-                                    Crear obra (Admin)
+                                    Crear obra
                                 </Link>
 
                                 {/*
@@ -58,7 +58,7 @@ export default function Header() {
                         {
                             authStatus ?
                                 <div class="ml-10 space-x-4">
-                                    <Link to="/perfil" class="inline-block bg-turquoise py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-60">Mi perfil</Link>
+                                    {/*<Link to="/perfil" class="inline-block bg-turquoise py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-60">Mi perfil</Link>*/}
                                     <Link to="/" onClick={() => { logoutUser() }} class="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-turquoise hover:bg-blue-50">Cerrar sesión</Link>
                                 </div>
                                 :

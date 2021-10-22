@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import ObrasContext from './../context/Obras/ObrasContext'
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 /**
  function FileUplouad({ setImage }) {
@@ -48,6 +50,7 @@ export default function Cloudinary() {
 export default function CreateObra() {
     //estado global
     const ctx = useContext(ObrasContext)
+    const history = useHistory()
     const { addObra } = ctx
 
     //estado local
@@ -73,12 +76,27 @@ export default function CreateObra() {
     const handleSubmit = (event) => {
         event.preventDefault()
         addObra(newObra)
+        history.push('/obras')  
     }
+
+    const handleUploadPhoto = async (event) => {
+        console.log(event.target.files)
+        
+        const cloudinaryAPI = 'https://api.cloudinary.com/v1_1/artempo/image/upload'
+    
+        const data = new FormData()
+        data.append('upload_preset', 'artempo')
+        data.append('file', event.target.files[0])
+        
+        const result = await axios.post(cloudinaryAPI, data)
+         console.log(result.data.secure_url)
+      setNewObra(prevState => ({ ...prevState, picturesUrl:result.data.secure_url }))
+      }
 
     return (
         <>
-            <form className="space-y-8 divide-y divide-gray-200" onSubmit={(e) => {
-                handleSubmit(e);
+            <form className="space-y-8 divide-y divide-gray-200" 
+            onSubmit={(e) => { handleSubmit(e) 
             }}
             >
                 <div>
@@ -151,45 +169,15 @@ export default function CreateObra() {
                                 <label htmlFor="picturesUrl" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                     Fotografía de tu obra
                                 </label>
-                                <input value={newObra.picturesUrl}
-                                    name="picturesUrl"
-                                    onChange={(e) => {
-                                        handleForm(e)
-                                    }}
-                                    className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                                <input 
+                                 type="file"
+                                 name="picturesUrl"
+                                 value={newObra.picturesUrl} 
+                                 onChange={(e) => {
+                                   handleUploadPhoto (e);
+                                 }}
+                                 className="relative cursor-pointer bg-white rounded-md font-medium text-cerulean-600 hover:text-blue-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-turquoise"
                                 />
-                                <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                    <div className="max-w-lg flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                                        <div className="space-y-1 text-center">
-                                            <svg
-                                                className="mx-auto h-12 w-12 text-gray-400"
-                                                stroke="currentColor"
-                                                fill="none"
-                                                viewBox="0 0 48 48"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <div className="flex text-sm text-gray-600">
-                                                <label
-                                                    htmlFor="file-upload"
-                                                    className="relative cursor-pointer bg-white rounded-md font-medium text-blue-700 hover:text-cerulean focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-turquoise"
-                                                >
-                                                    <span>Upload a file</span>
-                                                    <input id="file-upload" name="file-upload" type="file" className="sr-only"
-                                                    />
-                                                </label>
-                                                <p className="pl-1">or drag and drop</p>
-                                            </div>
-                                            <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,7 +185,7 @@ export default function CreateObra() {
 
                 <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                     <div>
-                        <h3 className="text-lg leading-6 font-medium text-gray-900 text-center">DIMENSIONES (milímetros):</h3>
+                        <h3 className="text-lg leading-6 font-medium text-gray-900 text-center">DIMENSIONES (centímetros):</h3>
                         <h4 className="text-lg leading-6 font-medium text-gray-700 text-center">Recuerda solo poner los números (no letras ni caracteres especiales)</h4>
                     </div>
                     <div className="space-y-6 sm:space-y-3">
