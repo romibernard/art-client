@@ -1,4 +1,3 @@
-//.common para seleccionar las propiedades del header
 import React, { useReducer } from 'react'
 import axiosClient from '../../config/axios'
 import UsersContext from "./UsersContext"
@@ -14,12 +13,12 @@ const UsersState = (props) => {
         authStatus: false
     }
     const [globalState, dispatch] = useReducer(UsersReducer, initialState)
-    //create user
+
     const registerUser = async (dataForm) => {
         console.log(dataForm)
         try {
             const res = await axiosClient.post("/api/users/create", dataForm)
-            // keep token en local 
+
             const token = res.data.data.token
             dispatch({
                 type: "CREATE_USER_OK",
@@ -30,7 +29,7 @@ const UsersState = (props) => {
         }
     }
 
-    //login
+
     const loginUser = async (dataForm) => {
         try {
             const res = await axiosClient.post("/api/auth/login", dataForm)
@@ -44,16 +43,15 @@ const UsersState = (props) => {
         }
     }
 
-    //confirmar crdeenciales
+
     const tokenVerification = async () => {
-        //get token
+
         const token = localStorage.getItem("token")
         if (!token) {
             console.log("Borrando Token de los headers")
             delete axiosClient.defaults.headers.common["x-auth-token"] //clear petición
         }
-        //token en headers
-        //.common para seleccionar las propiedades del header
+    
         axiosClient.defaults.headers.common["x-auth-token"] = token
         //petición
         try {
@@ -69,7 +67,7 @@ const UsersState = (props) => {
         }
     }
 
-    //cerrar sesión
+
     const logoutUser = async () => {
         dispatch({
             type: "LOGOUT"

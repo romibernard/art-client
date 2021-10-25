@@ -2,8 +2,6 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import UsersContext from '../../context/Users/UsersContext'
 
-
-//import logo from ''
 export default function Header() {
     const ctxUser = useContext(UsersContext)
     const { user, authStatus, logoutUser } = ctxUser

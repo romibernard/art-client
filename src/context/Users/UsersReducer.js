@@ -11,8 +11,8 @@ const reducer = (globalState, action) => {
                 ...globalState,
                 user: [...globalState.USER, action.payload],
             };
-        case "INICIO_SESION_EXITOSO": //ok
-        case "CREATE_USER_OK":  //ok
+        case "INICIO_SESION_EXITOSO":
+        case "CREATE_USER_OK":
             localStorage.setItem("token", action.payload)
             return {
                 ...globalState,

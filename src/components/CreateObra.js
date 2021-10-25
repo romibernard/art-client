@@ -3,49 +3,6 @@ import ObrasContext from "./../context/Obras/ObrasContext";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-/**
- function FileUplouad({ setImage }) {
-    const cloudinaryAPi = "https://api.cloudinary.com/v1_1/artempo/image/upload"
-
-    //Nombre de la configuracion (Preset)
-    const namePreset = "artempo";
-    const onFileChange = async (e) => {
-        console.log(e.target.files);
-
-        // Para poder subir archivos a Cloudinary, vamos a necesitar usar un elemento llamado FormData.
-        // Form data es una estructura que simula lo que un formulario en modulo 2 enviaba al backend, una estructura como un objeto con llave y valor.
-
-        const data = new FormData();
-        //data.append('firstName', 'Sam') // -> <input name="firstName"/>
-        // Agregamos la data necesaria para cloudinary (upload_preset = Configuracion en cloudinary y el archivo que vamos a subir)
-        data.append("upload_preset", namePreset);
-        data.append("file", e.target.files[0]);
-
-        //request a la api para subir el archivo
-        const result = await axios.post(cloudinaryAPi, data);
-        console.log(result);
-        setImage(result.data.secure_url);
-    };
-
-    return (
-        <>
-            <input type="file" onChange={onFileChange} />
-        </>
-    );
-}
-
-export default function Cloudinary() {
-    const [image, setImage] = useState(null);
-    return (
-        <>
-            <h1>Subida de archivos con Cloudinary</h1>
-            {image && <img src={image} alt="fotograp" />}
-            <FileUplouad setImage={setImage} />
-        </>
-    );
-}
-
- */
 export default function CreateObra() {
   //estado global
   const ctx = useContext(ObrasContext);

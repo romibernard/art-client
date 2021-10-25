@@ -11,7 +11,7 @@ const reducer = (globalState, action) => {
                 ...globalState,
                 obras: [
                     ...globalState.obras,
-                    action.payload//del ObrasState
+                    action.payload
                 ]
             }
         default:
