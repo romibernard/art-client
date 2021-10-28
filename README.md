@@ -1,10 +1,7 @@
 <div id="top"></div>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[[Pull-Requests][pull-shield]][https://github.com/romibernard/art-client/pulls]
+[[LinkedIn][linkedin-shield]][https://www.linkedin.com/in/romcarranza/]
 
 
 
@@ -12,7 +9,7 @@
 <div align="center">
   <a href="https://github.com/romibernard/art-client.git">
   <a href="https://github.com/romibernard/art-server.git">
-    <img src="./client/public/images/logo/artempo-logo.png" alt="Logo" width="80" height="80">
+    <img src="https://artempo-studio.netlify.app/images/logo/artempo-logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Artempo Studio</h3>
@@ -55,8 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[[Artempo SS][artempo-screenshot]](./../images/autor/previes.png)
-
+The intention of Artempo Studio official website is to allow any interested artist to publish their art, either if there's sculptures, booknooks, personalizations of certain work of art, etcetera...
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -100,9 +96,9 @@
    https://tailwindcss.com/docs/guides/create-react-app
    ```
 6. For you to be able to see both folders in your local server while running **npm run dev** in your terminal, remember to add the script in the server's `package.json`:
-```js
+    ```js
     "dev": "nodemon index.js"
-```
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -111,8 +107,6 @@
 ## Usage
 
 # Artempo Studio - galería virtual
-
-The intention of Artempo Studio official website is to allow any interested artist to publish their art, either if there's sculptures, booknooks, personalizations of certain work of art, etcetera...
 
 If you want to collaborate, the pull requests are available or if you want to publish your artwork feel free to access through: `https://artempo-studio.netlify.app/` creating you account, creating your "obra" and add at the form your contact info to make available the contact for purchase.
 
@@ -139,7 +133,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Instagram - [@developer.path](https://www.instagram.com/developer.path/) - @developer.path
+Instagram - [@developer.path](https://www.instagram.com/developer.path/) 
 
 Project Link: [https://artempo-studio.netlify.app/](https://artempo-studio.netlify.app/)
 
@@ -148,9 +142,9 @@ Project Link: [https://artempo-studio.netlify.app/](https://artempo-studio.netli
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
+[forks-url]: https://github.com/romibernard/art-client/network/members
+[stars-shield]: https://img.shields.io/github/stars/romibernard/art-client.svg?style=for-the-badge
+[stars-url]: https://github.com/romibernard/art-client/stargazers
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/romcarranza
 [product-screenshot]: ./../images/autor/preview.png
@@ -163,7 +157,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 You can see the dependencies installed in the `packaje.json` file in both folders for you to reinstall under the circumstance that it doesn't run.
 
-Happy coding && || upload of your artwork!
+Happy coding  &&  || upload of your artwork!
 
 
 # art-client
