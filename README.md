@@ -1,10 +1,5 @@
 <div id="top"></div>
 
-[[Pull-Requests][pull-shield]][https://github.com/romibernard/art-client/pulls]
-[[LinkedIn][linkedin-shield]][https://www.linkedin.com/in/romcarranza/]
-
-
-
 <br />
 <div align="center">
   <a href="https://github.com/romibernard/art-client.git">
